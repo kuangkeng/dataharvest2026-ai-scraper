@@ -8,6 +8,11 @@ Keng (Kuek Ser Kuang Keng)
 
 **[Read the tutorial published in Oct 2025](https://pulitzercenter.org/resource/how-non-coding-journalists-can-build-web-scrapers-ai-examples-and-prompts-included)**
 
+#### Cheatsheet:
+[Task #1 Colab (created with Claude Pro)](https://colab.research.google.com/drive/1qwlBd3bc128D2dVyLFADi1LNu5QnuH51?usp=sharing)<br>
+[Task #1 Colab (created using free Gemini)](https://colab.research.google.com/drive/1pdv4DTsUe-K4pHXRvd7eWxXbjnxxTmsK?usp=sharing)<br>
+[Task #2 Colab (created using free built-in Gemini in Colab)](https://colab.research.google.com/drive/14edVK9ET0R1Mq7oMo2SazdCUyIB-2q2u?usp=sharing)
+
 ## Task #1:
 
 The Metals Company (TMC) is a Canadian-based deep-sea mining company pushing for permits to start deep sea mining operations in the Pacific Ocean. You want to report on how TMC has changed its official narrative to push for such approvals. To do that you need to collect all 148 press releases (or more) from its website. You know nothing about coding but you want to use a LLM to help you build a Python web scraper from scratch and run it either from Google Collab (register a free account) or your own computer (Terminal for macOS or PowerShell for Windows).
