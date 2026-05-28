@@ -13,6 +13,10 @@ Keng (Kuek Ser Kuang Keng)
 [Task #1 Colab (created using free Gemini)](https://colab.research.google.com/drive/1pdv4DTsUe-K4pHXRvd7eWxXbjnxxTmsK?usp=sharing)<br>
 [Task #2 Colab (created using free built-in Gemini in Colab)](https://colab.research.google.com/drive/14edVK9ET0R1Mq7oMo2SazdCUyIB-2q2u?usp=sharing)
 
+#### Stories published using the scrapers:
+Task #1: [A Sales-Pitch Pivot Brings Deep-Sea Mining Closer to Reality](https://pulitzercenter.org/stories/sales-pitch-pivot-brings-deep-sea-mining-closer-reality)<br>
+Task #2: [That ‘Fish’ on the Menu? In Brazil’s Schools and Prisons, It’s Often Shark](https://pulitzercenter.org/stories/fish-menu-brazils-schools-and-prisons-its-often-shark)
+
 ## Task #1:
 
 The Metals Company (TMC) is a Canadian-based deep-sea mining company pushing for permits to start deep sea mining operations in the Pacific Ocean. You want to report on how TMC has changed its official narrative to push for such approvals. To do that you need to collect all 148 press releases (or more) from its website. You know nothing about coding but you want to use a LLM to help you build a Python web scraper from scratch and run it either from Google Collab (register a free account) or your own computer (Terminal for macOS or PowerShell for Windows).
