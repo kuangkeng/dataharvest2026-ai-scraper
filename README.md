@@ -139,9 +139,3 @@ Click this button to go to the next page:
 7. Give me a preview of the csv file at the end.
 ```
 
-
-
-
-
-If you have no idea how to start, you can refer to this tutorial.
-
