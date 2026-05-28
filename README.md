@@ -17,6 +17,37 @@ Keng (Kuek Ser Kuang Keng, Senior Editor for Rainforest Investigations at Pulitz
 Task #1: [A Sales-Pitch Pivot Brings Deep-Sea Mining Closer to Reality](https://pulitzercenter.org/stories/sales-pitch-pivot-brings-deep-sea-mining-closer-reality)<br>
 Task #2: [That ‘Fish’ on the Menu? In Brazil’s Schools and Prisons, It’s Often Shark](https://pulitzercenter.org/stories/fish-menu-brazils-schools-and-prisons-its-often-shark)
 
+## Plan your strategy
+Once you know where the data you want to scrap is located, you need to plan the right strategy. Here are some basic steps to start:
+
+#### 1. Understand how the web page is built (static versus dynamic)
+
+* A static web page is like a printed newspaper: The content doesn’t change once created unless someone edits the page. What you see is exactly what’s stored on the server. If you refresh, you’ll get the same content. An example is a [Wikipedia page](https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population) with a list of countries.
+
+* You can imagine a dynamic web page like a social media feed, where content changes automatically depending on who’s visiting, what they click, or what new data is available. When you load or refresh, your browser typically runs scripts and talks to a database or API (Application Programming Interface) to fetch the content. A dynamic page we scraped for the shark meat procurements investigation was [São Paulo’s public procurements database](https://www.imprensaoficial.com.br/ENegocios/BuscaENegocios_14_1.aspx), which requires you to fill in the search box to view data.
+
+* Static pages are usually easier to scrape because the data is present in the page’s HTML source, whereas dynamic pages often require extra steps because the data is hidden behind scripts or loads only when you interact with the page. That calls for a more advanced scraper, which the workshop will demo in Task #2.
+
+* However, you can’t always tell by just looking. Some pages that appear static are actually dynamic. Do a quick test: Open the page, right click, and select “View Page Source” (in Chrome) to see the HTML. Use Find (Ctrl+F/Cmd+F) to search for the data you want to scrape. If the data is in the code, it’s likely static. If you don’t see it, the page is probably dynamic. You can also ask a LLM to analyze it for you.
+
+#### 2. Prepare the information for the LLM
+
+* URL of the web page
+
+* HTML source code (optional, but include it for reliability)
+
+* Which data you need to scrape (fields/columns)
+
+* Where/how to store the data (e.g., CSV file)
+
+* Pagination details (Does the page have multiple pages? How to navigate them?)
+
+* Where you’ll run the scraper (your computer or an online platform like [Google Colab](https://colab.research.google.com/))
+
+* Final check: Ask if the LLM needs any other information before generating the script
+
+#### Now let's start building our scraper.
+
 ## Task #1:
 
 The Metals Company (TMC) is a Canadian-based deep-sea mining company pushing for permits to start deep sea mining operations in the Pacific Ocean. You want to report on how TMC has changed its official narrative to push for such approvals. To do that you need to collect all 148 press releases (or more) from its website. You know nothing about coding but you want to use a LLM to help you build a Python web scraper from scratch and run it either from Google Collab (register a free account) or your own computer (Terminal for macOS or PowerShell for Windows).
