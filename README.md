@@ -2,7 +2,7 @@
 
 **Dataharvest 2026**
 
-Keng (Kuek Ser Kuang Keng)
+Keng (Kuek Ser Kuang Keng, Senior Editor for Rainforest Investigations at Pulitzer Center)
 
 **[View the workshop materials](https://github.com/kuangkeng/dataharvest2026-ai-scraper)**
 
