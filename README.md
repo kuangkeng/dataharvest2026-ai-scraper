@@ -1,6 +1,6 @@
 # Build web scrapers with AI for non-coding journalists
 
-**Dataharvest 2026**
+**Workshop at Dataharvest 2026**
 
 Keng (Kuek Ser Kuang Keng, Senior Editor for Rainforest Investigations at Pulitzer Center)
 
