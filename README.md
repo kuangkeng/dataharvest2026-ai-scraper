@@ -38,6 +38,8 @@ Once you know where the data you want to scrap is located, you need to plan the 
 
 * URL of the web page
 
+* Which coding language to use (Python)
+  
 * HTML source code (optional, but include it for reliability)
 
 * Which data you need to scrape (fields/columns)
