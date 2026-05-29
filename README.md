@@ -17,6 +17,10 @@ Keng (Kuek Ser Kuang Keng, Senior Editor for Rainforest Investigations at Pulitz
 Task #1: [A Sales-Pitch Pivot Brings Deep-Sea Mining Closer to Reality](https://pulitzercenter.org/stories/sales-pitch-pivot-brings-deep-sea-mining-closer-reality)<br>
 Task #2: [That ‘Fish’ on the Menu? In Brazil’s Schools and Prisons, It’s Often Shark](https://pulitzercenter.org/stories/fish-menu-brazils-schools-and-prisons-its-often-shark)
 
+#### Invetigation Methodologies behind the stories:
+Task #1: [How We Analyzed The Metals Company’s Public Messaging on Deep-Sea Mining](https://pulitzercenter.org/resource/how-we-analyzed-metals-companys-public-messaging-deep-sea-mining)<br>
+Task #2: [How We Probed a Maze of Websites To Tally Brazilian Government Shark Meat Orders](https://pulitzercenter.org/resource/how-we-probed-maze-websites-tally-brazilian-government-shark-meat-orders)
+
 ## Plan your strategy
 Once you know where the data you want to scrap is located, you need to plan the right strategy. Here are some basic steps to start:
 
@@ -70,7 +74,7 @@ Note: If the LLM faces a problem accessing the web page, you need to spoon-feed 
 Here's the HTML source code: [paste the HTML source code]
 ```
 
-#### 2. Now ask LLM to build the first scraper to extract the title, date, and url of each press release.
+#### 2. Now ask the LLM to build the first scraper to extract the title, date, and url of each press release.
 ```
 I need to build a scraper for the web page below. It is a static web page.
 Write me a Python script to scrape the web page in Google Collab. 
@@ -103,6 +107,30 @@ Here's the HTML of one of the press release pages [paste HTML source code of any
 
 
 ## Task #2:
+
+You want to find out how much shark meat did the São Paulo state government purchase in 2024 and who did it supply the meat to. It has a [transparency portal](https://www.imprensaoficial.com.br/ENegocios/BuscaENegocios_14_1.aspx) but this online database does not allow you to search keywords within the details of each tender. Hence you need to download all the government tender documents from the database and search through them to find tenders that mention shark meat (cação).
+
+### Steps:
+
+#### 1. Try to figure out if the web page is static or dynamic to help you plan your strategy.
+The database is a dynamic web page. You need to select or fill in some of the 12 fields in the search box and click the search (Buscar) button to view the table with links to each tender. LLMs can't "visit" the website like a human as it does not have a live web browser window, hence we need to tell them which fields to fill, options to select, buttons to click, and tables or lists to extract in a way that they can convert your instructions into a coding script.
+
+#### 2. Identify the HTML elements that the scraper needs to interact with.
+To give accurate instructions to LLMs, you need the “names” of those elements (dropdown menu, text box, button etc.) on the web page. Every element is located on the web page as a HTML element. Common HTML elements include `<h1>` for a header, `<a>` for a link, `<table>` for a data table, and `<button>` for a button. Many elements have attributes (their “labels”), such as `<class>` and `<id>`, which help you identify them.
+
+To identify an element and its attributes, right-click it and choose Inspect (in Chrome). This opens DevTools, showing the page’s HTML and attributes. The selected element is highlighted; hovering in DevTools highlights the matching content on the page. To copy it, right click the element in the Elements panel and choose Copy → Copy element (get the full HTML). Later you will need to paste this in your LLM prompt to tell the LLM how to react with this element. 
+
+#### 3. Now ask the LLM to build the scraper that can interact with the database and extract the search results.
+
+We want to filter the results by: 
+* `Materiais e Equipamentos` for the field `Área`
+* `Generos Alimenticios` for the field `Subárea`
+* `ENCERRADA` (closed) for the field `Status`
+* Date range: between January 1, 2024, and December 31, 2024
+
+Then click the `Buscar` (search) button, wait for the result table to load, and extract all the information from the table into a CSV file.
+
+Here's the prompt:
 
 ```
 I would like to write a Python script that I will run from Google Collab to scrape data from an online database and store it in a CSV file. It is a dynamic web page. Below are the steps required to view the data. I’ve specified the HTML elements that the scraper should interact with. Print messages at different steps to show progress and help debug any errors. Let me know if you need any more information from me.
@@ -169,4 +197,17 @@ Click this button to go to the next page:
 
 7. Give me a preview of the csv file at the end.
 ```
+
+#### 4. Troubleshoot the coding script
+
+The first coding script given by the LLM might not work the first time as this is a much complex scraping task compared to Task #1. 
+
+If you are running the script on your computer, you can copy paste the error message back to the LLM and ask it to explain and fix the issue and regenerate the script. Then you rerun the script in your computer.
+
+If you are running the script on Colab, use the built-in Gemini to explain and fix the script and rerun it. 
+
+You might need to go through several iterations before the scraper can run as expected.
+
+If you run into problems, feel free to reach to me at keng@pulitzercenter.org.
+
 
